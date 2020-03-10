@@ -1,0 +1,142 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+def STRING = "String"
+def BASE_URL = "BASE_URL"
+
+def majorVersion = 1
+def minorVersion = 2
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.pop.movies.app"
+        minSdkVersion 23
+        targetSdkVersion 29
+        buildToolsVersion "29.0.3"
+        versionCode 1
+        versionName "$majorVersion.$minorVersion"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(STRING, BASE_URL, project.BASE_URL)
+        setProperty("archivesBaseName", "popMovies-$versionName.$versionCode")
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs = ['src/test/kotlin']
+        androidTest.java.srcDirs = ['src/androidTest/kotlin']
+    }
+
+    lintOptions {
+        quiet true
+        checkReleaseBuilds true
+        abortOnError false
+        warningsAsErrors true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+androidExtensions {
+    experimental true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.kotlin_version"
+
+    // Koin
+    implementation "org.koin:koin-core-ext:$rootProject.koin_ext_version"
+    implementation "org.koin:koin-android:$rootProject.koin_version"
+    implementation "org.koin:koin-androidx-scope:$rootProject.koin_ext_version"
+    implementation "org.koin:koin-androidx-viewmodel:$rootProject.koin_ext_version"
+    implementation "org.koin:koin-androidx-ext:$rootProject.koin_ext_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycle_version"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$rootProject.timber_version"
+
+    // Support
+    implementation "androidx.appcompat:appcompat:$rootProject.support_lib_version"
+    implementation "com.google.android.material:material:$rootProject.material_version"
+
+    // Constraint Layout
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout_version"
+
+    // Swipe to Refresh layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.swiperefreshlayout_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+    annotationProcessor "androidx.annotation:annotation:1.1.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide_version"
+
+    // RxJava 2
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rx_android_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rx_java_version"
+
+    // OkHttp 3
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttp_version"
+
+    // Retrofit 2
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit2_version"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.retrofit2_RxJava2AdapterVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2_GsonConverterVersion"
+
+    // Room
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version"
+    implementation "androidx.room:room-rxjava2:$rootProject.room_version"
+
+    // Paging
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.paging_version"
+    testImplementation "androidx.paging:paging-common-ktx:$rootProject.paging_version"
+    implementation "androidx.paging:paging-rxjava2-ktx:$rootProject.paging_version"
+
+    // Loader
+    implementation "com.github.ybq:Android-SpinKit:$rootProject.spin_kit"
+}

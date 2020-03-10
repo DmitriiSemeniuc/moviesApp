@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Font sizes -->
+    <dimen name="text_size_micro">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_2xlarge">22sp</dimen>
+    <dimen name="text_size_3xlarge">24sp</dimen>
+    <dimen name="text_size_4xlarge">28sp</dimen>
+
+    <!-- Margins & Padding, 4 dp baseline -->
+    <dimen name="margin_padding_size_tiny">4dp</dimen>
+    <dimen name="margin_padding_size_small">8dp</dimen>
+    <dimen name="margin_padding_size_medium">16dp</dimen>
+    <dimen name="margin_padding_size_large">24dp</dimen>
+    <dimen name="margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="margin_padding_size_2xlarge">40dp</dimen>
+    <dimen name="margin_padding_size_3xlarge">48dp</dimen>
+    <dimen name="margin_padding_size_4xlarge">56dp</dimen>
+    <dimen name="margin_padding_size_5xlarge">60dp</dimen>
+    <dimen name="margin_padding_size_6xlarge">64dp</dimen>
+    <dimen name="margin_padding_size_7xlarge">68dp</dimen>
+    <dimen name="margin_padding_size_8xlarge">72dp</dimen>
+
+    <dimen name="app_bar_height">56dp</dimen>
+    <dimen name="internet_state_view_height">24dp</dimen>
+    <dimen name="snack_bar_padding">8dp</dimen>
+    <dimen name="snack_bar_padding_bottom">28dp</dimen>
+
+</resources>

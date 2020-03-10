@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/margin_padding_size_medium">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_overview"
+        style="@style/TextNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:lineSpacingExtra="@dimen/margin_padding_size_tiny"
+        tools:text="Some description goes here"
+        />
+
+    <View
+        android:id="@+id/view_underline"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_overview"
+        android:layout_marginTop="@dimen/text_size_medium"
+        />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/loader"
+        style="@style/SpinKitView.CubeGrid"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/margin_padding_size_large"
+        app:SpinKit_Color="@color/gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rv_movies_videos"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movies_videos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_underline"
+        android:layout_marginTop="@dimen/margin_padding_size_medium"
+        android:background="@color/white"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

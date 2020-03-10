@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFF</color>
+    <color name="mineShaft">#333333</color>
+    <color name="windowBackground">@color/white</color>
+    <color name="statusBarColor">#000000</color>
+    <color name="textPrimary">@color/mineShaft</color>
+    <color name="textSecondary">#4D4D4D</color>
+    <color name="black">#000000</color>
+    <color name="black10">#1A000000</color>
+    <color name="black25">#40000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black75">#BF000000</color>
+    <color name="black90">#E6000000</color>
+    <color name="gray">#818181</color>
+    <color name="lightGray">#EBEBEB</color>
+    <color name="colorNoInternetConnectionViewBackground">@color/mineShaft</color>
+    <color name="colorNoInternetConnectionStateText">#FFF</color>
+    <color name="snackBarBg">#1A1A1A</color>
+    <color name="snackBarMessageText">@color/white</color>
+    <color name="snackBarButtonText">@color/snackBarMessageText</color>
+    <color name="snackBarButtonBg">@color/snackBarBg</color>
+    <color name="snackBarButtonStoke">#808080</color>
+</resources>
